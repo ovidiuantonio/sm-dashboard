@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (min-width: 1900px) {
+    font-size: 72.5%;
+  }
+
+  @media only screen and (min-width: 2200px) {
+    font-size: 82.5%;
+  }
+
+  @media only screen and (min-width: 2600px) {
+    font-size: 102.5%;
+  }
+
+  @media only screen and (min-width: 3300px) {
+    font-size: 122.5%;
+  }
+
+  @media only screen and (min-width: 4400px) {
+    font-size: 162.5%;
+  }
+}
+
+:root {
+  --BG: hsl(230, 17%, 14%);
+  --Top-BG-Pattern: hsl(232, 19%, 15%);
+  --Card-BG: hsl(228, 28%, 20%);
+  --Text-small: hsl(228, 34%, 66%);
+  --Text-big: hsl(0, 0%, 100%);
+  --Card-BG-hover: hsl(228, 28%, 25%);
+}
+
+body {
+  background-color: var(--BG);
+  font-family: "Inter", sans-serif;
+  color: var(--Text-big);
+  position: relative;
+}
+
+.bg-pattern {
+  width: 100%;
+  height: 35vh;
+  background-color: var(--Top-BG-Pattern);
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  position: absolute;
+  z-index: -1;
+}
+
+.content {
+  width: 100%;
+  padding: 5vh 10vw;
+
+  @media only screen and (max-width: 600px) {
+    padding: 5vh 10vw;
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__left {
+    margin-right: auto;
+
+    @media only screen and (max-width: 900px) {
+      margin-right: 0;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--Card-BG);
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 900px) {
+      justify-content: space-between;
+    }
+  }
+
+  margin-bottom: 4rem;
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+
+    line-height: 2;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.2rem;
+  }
+}
+
+.description {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--Text-small);
+}
+
+.button-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-right: 1.5rem;
+  color: var(Text-small);
+}
+
+.button {
+  width: 6rem;
+  height: 3rem;
+  border-radius: 5rem;
+  background-image: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-ball {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 5rem;
+  background-color: var(--BG);
+  margin-left: 0.3rem;
+  transition: all 0.4s ease;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: auto;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+.logo {
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.arrow {
+  margin-right: 1rem;
+}
+
+.card-big,
+.card-small {
+  cursor: pointer;
+}
+
+.card-big:hover,
+.card-small:hover {
+  background-color: var(--Card-BG-hover);
+}
+
+.card-big {
+  min-width: 23%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 23rem;
+  margin-bottom: 4rem;
+
+  background-color: var(--Card-BG);
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &__top {
+    &-f {
+      background-color: hsl(208, 92%, 53%);
+      width: 100%;
+      height: 3px;
+      margin-bottom: 3rem;
+    }
+
+    &-t {
+      background-color: hsl(203, 89%, 53%);
+      width: 100%;
+      height: 3px;
+      margin-bottom: 3rem;
+    }
+
+    &-i {
+      width: 100%;
+      height: 3px;
+      margin-bottom: 3rem;
+      background-image: linear-gradient(
+        to right,
+        hsl(37, 97%, 70%),
+        hsl(329, 70%, 58%)
+      );
+    }
+
+    &-y {
+      width: 100%;
+      height: 3px;
+      margin-bottom: 3rem;
+      background-color: hsl(348, 97%, 39%);
+    }
+  }
+
+  &__user {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__number {
+    font-size: 5rem;
+    font-weight: 700;
+
+    &-type {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--Text-small);
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__growth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    min-width: 22rem;
+  }
+
+  @media only screen and (max-width: 900px) {
+    min-width: 24rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    min-width: 100%;
+  }
+}
+
+.username {
+  font-size: 1.3rem;
+  color: var(--Text-small);
+  font-weight: 700;
+}
+
+.growth-amount {
+  font-size: 1.4rem;
+  color: hsl(163, 72%, 41%);
+
+  &-down {
+    font-size: 1.4rem;
+    color: hsl(356, 69%, 56%);
+  }
+}
+
+.title-2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 4rem;
+    font-size: 3rem;
+  }
+}
+
+.sub-stats__cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: auto;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+.card-small {
+  min-width: 23%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-bottom: 2rem;
+  padding: 3rem;
+  border-radius: 5px;
+  background-color: var(--Card-BG);
+
+  &__title {
+    font-size: 1.5rem;
+    color: var(--Text-small);
+    font-weight: 700;
+  }
+
+  &__number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--Text-big);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__growth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    min-width: 22rem;
+  }
+
+  @media only screen and (max-width: 900px) {
+    min-width: 24rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    min-width: 100%;
+  }
+}
